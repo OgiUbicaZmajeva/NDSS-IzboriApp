@@ -10,14 +10,14 @@
 
 Platforma rešava dva ključna izazova:
 1. **Predviđanje rezultata tradicionalnih i koalicionih lista** putem višedimenzionalnih latentnih koordinata (5D TruncatedSVD) i Neymanovog stratifikovanog ponderisanja.
-2. **Projekcija novih lista bez istorijskog učešća ("Zero-Baseline" liste)** u ranoj fazi izborne noći bez prekoračenja margine greške.
+2. **Projekcija novih lista bez istorijskog učešća** u ranoj fazi izborne noći bez prekoračenja margine greške.
 
 ---
 
 ## 🚀 Ključne funkcionalnosti
 
 - **Izbor optimalnog reprezentativnog uzorka ($K^* = 200$ biračkih mesta)**:
-  - Algoritam koristi *Hat-Matrix* statističku polugu (leverage) i ponderisanu ocenu brzine izveštavanja (Pareto frontier solver) za automatski odabir najinformativnijih 200 biračkih mesta u 9 regiona.
+  - Algoritam koristi *Hat-Matrix* statističku polugu i ponderisanu ocenu brzine izveštavanja (Pareto frontier solver) za automatski odabir najinformativnijih 200 biračkih mesta u 9 regiona.
   - Obezbeđuje grešku procene manju od **0.35%** pre pristizanja većine biračkih mesta.
 - **Četvorostepeni režim projekcije u realnom vremenu**:
   - `Režim 0 (A Priori)`: Početno stanje pre pristizanja zapisnika.

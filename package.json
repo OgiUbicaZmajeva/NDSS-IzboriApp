@@ -1,0 +1,35 @@
+{
+  "name": "izbori-app",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Hibridni sistem za obradu izbornih rezultata u realnom vremenu (SQLite WAL + Hybrid Neyman-SVD & D'Hondt Engine)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test:schema2026": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./src/lib/db/__tests__/schema-2026.test.ts');\"",
+    "test:sentinel": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./src/lib/engine/__tests__/sentinel-optimizer.test.ts');\"",
+    "test:projection2026": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./src/lib/engine/__tests__/dynamic-projection-2026.test.ts');\"",
+    "test:ingest2026": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./src/lib/ingest/__tests__/rik-poller-2026.test.ts');\"",
+    "test:sentinel2026": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./src/app/api/operations/sentinel-2026/__tests__/sentinel-2026-route.test.ts');\"",
+    "test:phase2": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./scripts/test-phase2-engine.ts');\"",
+    "test:phase3": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./scripts/test-phase3-api-sync.ts');\"",
+    "test:phase4": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s === 'react') return { url: 'data:text/javascript,export function useSyncExternalStore(sub,get){return get();}', shortCircuit: true }; if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./scripts/test-phase4-store-panels.ts');\"",
+    "test:phase6": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s === 'react') return { url: 'data:text/javascript,export function useSyncExternalStore(sub,get){return get();}', shortCircuit: true }; if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./scripts/test-phase6-municipality-inspector.ts');\"",
+    "test:phase7": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./scripts/test-phase7-monte-carlo-whatif.ts');\"",
+    "test:phase8": "node -e \"import { registerHooks } from 'node:module'; registerHooks({ resolve(s, c, n) { if (s.startsWith('.') && !s.endsWith('.ts') && !s.endsWith('.tsx')) return n(s + '.ts', c); return n(s, c); } }); import('./scripts/test-phase8-audit-batch-csv.ts');\"",
+    "test": "npm run test:schema2026 && npm run test:sentinel && npm run test:projection2026 && npm run test:ingest2026 && npm run test:sentinel2026 && npm run test:phase2 && npm run test:phase3 && npm run test:phase4 && npm run test:phase6 && npm run test:phase7 && npm run test:phase8"
+  },
+  "dependencies": {
+    "next": "^15.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.0"
+  }
+}
